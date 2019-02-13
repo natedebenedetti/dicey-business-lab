@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+}
+
+#button-div {
+    margin: 5em;
+    display: flex;  
+    align-content: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+#dice-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.dice {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border: 3px solid white;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    
+}
