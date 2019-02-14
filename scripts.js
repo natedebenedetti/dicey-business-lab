@@ -24,13 +24,17 @@ class Die { //OOP class Die.
         rollBtn.click(() => { //calls the roll method on button click
             this.roll();
         });
-        // sumButton.click(() => {
-        //     this.sumDice();
-        // });
+        this.div.click(() => { //calls the rollOne method on whichever die is clicked.
+            this.rollOne();
+        })
     }
 
-    roll() {
-        this.div.text(randomNum()); //changes die number to random number for any dice on the screen at that time when roll dice button is clicked.
+    roll() { //changes all dice numbers to random numbers when roll dice button is clicked.
+        this.div.text(randomNum()); 
+    }
+
+    rollOne() { //changes die number of a specific die when that die is clicked.
+        this.div.text(randomNum());
     }
 
 
