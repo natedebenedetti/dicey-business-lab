@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    border: 3px dashed red;
 }
 
 #button-div {
