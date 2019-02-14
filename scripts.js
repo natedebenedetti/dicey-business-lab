@@ -26,7 +26,10 @@ class Die { //OOP class Die.
         });
         this.div.click(() => { //calls the rollOne method on whichever die is clicked.
             this.rollOne();
-        })
+        });
+        this.div.dblclick(() => {
+            this.removeOne();
+        });
     }
 
     roll() { //changes all dice numbers to random numbers when roll dice button is clicked.
@@ -35,6 +38,10 @@ class Die { //OOP class Die.
 
     rollOne() { //changes die number of a specific die when that die is clicked.
         this.div.text(randomNum());
+    }
+
+    removeOne() {
+        this.div.remove();
     }
 
 
