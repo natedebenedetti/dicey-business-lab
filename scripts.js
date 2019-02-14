@@ -33,14 +33,8 @@ class Die { //OOP class Die.
         this.div.text(randomNum()); //changes die number to random number for any dice on the screen at that time when roll dice button is clicked.
     }
 
-    // sumDice() {
-    //     console.log(this.div.text().split(''));
-    // }   
+
 }
-
-
-
-
 
 
 sumButton.click(() => {
@@ -49,13 +43,13 @@ sumButton.click(() => {
 });
 
 function sumDice() {
-    let diceVals = $('.dice').text().split("");
-    let numbers = [];
-    for(i = 0; i < diceVals.length; i++){
-        numbers.push(parseInt(diceVals[i]));
+    let diceVals = $('.dice').text().split(""); //takes the innertext of the class dice and places it in an array of strings in the variable named diceVals.
+    let numbers = []; //creates an empty array in the variable named numbers.
+    for(i = 0; i < diceVals.length; i++){ //loops through the diceVals array
+        numbers.push(parseInt(diceVals[i])); //at each location in the diceVals array it changes the value from a string to a number and push's it onto the numbers array.
         
     }
-    function sum(total, num) {
+    function sum(total, num) { //function used by .reduce method to calculate the sum of all the dice on the screen
         return total + num;
     }
     alert(numbers.reduce(sum));// possibly use the array.reduce method now that i have a way of capturing the values of the dice divs in an array and converting them to numbers.
