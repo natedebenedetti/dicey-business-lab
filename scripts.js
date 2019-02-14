@@ -23,15 +23,25 @@ class Die { //OOP class Die.
         this.div.appendTo('#dice-div'); //appends a new div for every instance created.
         rollBtn.click(() => { //calls the roll method on button click
             this.roll();
-            
         });
-        
+        // sumButton.click(() => {
+        //     this.sumDice();
+        // });
     }
 
-    roll() { //
+    roll() {
         this.div.text(randomNum()); //changes die number to random number for any dice on the screen at that time when roll dice button is clicked.
     }
+
+    // sumDice() {
+    //     console.log(this.div.text().split(''));
+    // }   
 }
+
+
+
+
+
 
 sumButton.click(() => {
     sumDice();
@@ -43,8 +53,13 @@ function sumDice() {
     let numbers = [];
     for(i = 0; i < diceVals.length; i++){
         numbers.push(parseInt(diceVals[i]));
-        console.log(numbers);// possibly use the array.reduce method now that i have a way of capturing the values of the dice divs in an array and converting them to numbers.
+        
     }
-    //console.log(diceVals);
-    
+    function sum(total, num) {
+        return total + num;
+    }
+    alert(numbers.reduce(sum));// possibly use the array.reduce method now that i have a way of capturing the values of the dice divs in an array and converting them to numbers.
 }
+    //console.log(diceVals);
+
+
