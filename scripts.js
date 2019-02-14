@@ -1,13 +1,15 @@
 const mainDiv = $('#main-div');
 let dieBtn = $('#die-button');
 let rollBtn = $('#roll-button');
+let sumButton = $('#sum-dice');
 
-dieBtn.click(function() {
+
+dieBtn.click(() => {
     let createDie = new Die(randomNum()); //adds a new instance of the class Die with random number on every button click.
-    
+
 });
 
-function randomNum(min, max) { //random number generating function for use throughout code
+let randomNum = (min, max) => { //random number generating function for use throughout code
     min = 1;
     max = 7;
     return Math.floor(Math.random() * (max - min) + min);
@@ -17,12 +19,13 @@ function randomNum(min, max) { //random number generating function for use throu
 class Die { //OOP class Die.
     constructor(die) {
         this.die = die;
-        this.div = $(`<div class=dice>${this.die}</div>`) 
+        this.div = $(`<div class=dice>${this.die}</div>`);
         this.div.appendTo('#dice-div'); //appends a new div for every instance created.
-        rollBtn.click( () => { //calls the roll method on button click
+        rollBtn.click(() => { //calls the roll method on button click
             this.roll();
             
-        })
+        });
+        
     }
 
     roll() { //
@@ -30,3 +33,18 @@ class Die { //OOP class Die.
     }
 }
 
+sumButton.click(() => {
+    sumDice();
+
+});
+
+function sumDice() {
+    let diceVals = $('.dice').text().split("");
+    let numbers = [];
+    for(i = 0; i < diceVals.length; i++){
+        numbers.push(parseInt(diceVals[i]));
+        console.log(numbers);// possibly use the array.reduce method now that i have a way of capturing the values of the dice divs in an array and converting them to numbers.
+    }
+    //console.log(diceVals);
+    
+}
