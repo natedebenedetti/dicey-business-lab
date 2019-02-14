@@ -7,11 +7,6 @@ dieBtn.click(function() {
     
 });
 
-
-
-
-
-
 function randomNum(min, max) { //random number generating function for use throughout code
     min = 1;
     max = 7;
@@ -30,7 +25,8 @@ class Die { //OOP class Die.
         })
     }
 
-    roll() { //trying to create a roll method within the class Die that when called upon will change the numbers on the die to another random number.
+    roll() { //
         this.div.text(randomNum()); //changes die number to random number for any dice on the screen at that time when roll dice button is clicked.
     }
 }
+
